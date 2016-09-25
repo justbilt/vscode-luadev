@@ -1,0 +1,50 @@
+{
+    "name": "luadev",
+    "displayName": "LuaDev",
+    "description": "A best lua develop extension",
+    "version": "0.0.1",
+    "publisher": "justbilt",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:lua",
+        "onCommand:extension.sayHello"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "languages": [
+        {
+            "id": "lua",
+            "extensions": [
+                ".lua"
+            ],
+            "aliases": [
+                "Lua"
+            ]
+        }
+        ],        
+        "commands": [{
+            "command": "extension.sayHello",
+            "title": "Hello World 2"
+        }]
+    },
+    "capabilities": {
+        "documentSymbolProvider" : "true"
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "dependencies": {
+        "luaparse": "^0.2.1"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
