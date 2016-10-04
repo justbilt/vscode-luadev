@@ -4,6 +4,7 @@
 import * as vscode from 'vscode';
 
 import { LuaDocumentSymbolProvider } from './luaOutline';
+import { LuaDefinitionProvider } from './luaDefinition';
 import { LUA_MODE } from './luaMode';
 
 // this method is called when your extension is activated
@@ -15,6 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Congratulations, your extension "luadev" is now active!');
 
     context.subscriptions.push(vscode.languages.registerDocumentSymbolProvider(LUA_MODE, new LuaDocumentSymbolProvider()));
+    context.subscriptions.push(vscode.languages.registerDefinitionProvider(LUA_MODE, new LuaDefinitionProvider()));
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand

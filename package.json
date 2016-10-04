@@ -33,7 +33,8 @@
         }]
     },
     "capabilities": {
-        "documentSymbolProvider" : "true"
+        "documentSymbolProvider" : "true",
+        "definitionProvider": "true"
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
